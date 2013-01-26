@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="JAVA_MODULE" version="4">
+  <component name="NewModuleRootManager" inherit-compiler-output="true">
+    <exclude-output />
+    <content url="file://$MODULE_DIR$/../../@version.folder@/src/portal-impl">
+      <sourceFolder url="file://$MODULE_DIR$/../../@version.folder@/src/portal-impl/test" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../@version.folder@/src/portal-impl/src" isTestSource="false" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="module" module-name="portal-service" />
+    <orderEntry type="module" module-name="util-bridges" />
+    <orderEntry type="module" module-name="util-java" />
+    <orderEntry type="library" name="Global" level="project" />
+    <orderEntry type="library" name="Portal" level="project" />
+  </component>
+</module>
+

@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+
+<project name="Intellij Files for LR" basedir="." default="copy-files">
+    <fail message="Please specify version.folder">
+        <condition>
+            <not>
+                <isset property="version.folder"/>
+            </not>
+        </condition>
+    </fail>
+
+    <filter token="version.folder" value="${version.folder}"/>
+
+    <target name="clean">
+        <delete dir="${basedir}/${version.folder}"/>
+    </target>
+
+    <target name="copy-files">
+        <mkdir dir="${basedir}/${version.folder}"/>
+        
+        <copy todir="${basedir}/${version.folder}" verbose="true" overwrite="true" filtering="true">
+            <fileset dir="${basedir}/templates">
+                <include name="*"/>
+            </fileset>
+        </copy>
+    </target>
+</project>
