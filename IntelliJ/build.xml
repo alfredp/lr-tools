@@ -10,13 +10,6 @@
                    defaultValue="${portal.src.dir}"
                    global="true" />
 
-    <propertyregex property="basedir.fixed"
-                   input="${basedir}"
-                   regexp="\\"
-                   replace="\/"
-                   defaultValue="${basedir}"
-                   global="true" />
-
     <target name="copy-files">
         <fail message="Please specify lr.version">
             <condition>
@@ -42,11 +35,11 @@
             </condition>
         </fail>
 
-        <mkdir dir="${basedir}/${dest.dir}"/>
+        <mkdir dir="${dest.dir}"/>
 
         <filter token="portal.src.dir" value="${portal.src.dir.fixed}"/>
 
-        <copy todir="${basedir}/${dest.dir}" verbose="true" overwrite="true" filtering="true">
+        <copy todir="${dest.dir}" verbose="true" overwrite="true" filtering="true">
             <fileset dir="${basedir}/templates/${lr.version}">
                 <include name="*"/>
             </fileset>
@@ -84,15 +77,15 @@ Arguments:
         The root directory of the portal source code
 
     dest.dir
-        The script will place the Intellij project files in ${basedir.fixed}/${dest.dir}.
+        The script will place the Intellij project files in ${dest.dir}.
         If the directory doesn't exist, it will be created.
 
 Usage:
-    ant -Dlr.version=5.2 -Dportal.src.dir=D:\\liferay\\portal\\5.2.8_EE\\src -Ddest.dir=some_client_proj copy-files
+    ant -Dlr.version=5.2 -Dportal.src.dir=D:\\liferay\\portal\\5.2.8_EE\\src -Ddest.dir=D:\\some_client_proj copy-files
 
-    ant -Dlr.version=5.2 -Dportal.src.dir=D:/liferay/portal/5.2.8_EE/src -Ddest.dir=some_client_proj copy-files
+    ant -Dlr.version=5.2 -Dportal.src.dir=D:/liferay/portal/5.2.8_EE/src -Ddest.dir=D:/some_client_proj copy-files
 
-    ant -Dlr.version=5.2 -Dportal.src.dir=/usr/local/liferay/portal/5.2.8_EE/src -Ddest.dir=some_client_proj copy-files
+    ant -Dlr.version=5.2 -Dportal.src.dir=/usr/local/liferay/portal/5.2.8_EE/src -Ddest.dir=/usr/local/some_client_proj copy-files
         </echo>
     </target>
 </project>
