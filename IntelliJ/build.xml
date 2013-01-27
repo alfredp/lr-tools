@@ -1,27 +1,98 @@
 <?xml version="1.0"?>
 
-<project name="Intellij Files for LR" basedir="." default="copy-files">
-    <fail message="Please specify version.folder">
-        <condition>
-            <not>
-                <isset property="version.folder"/>
-            </not>
-        </condition>
-    </fail>
+<project name="Intellij Files for LR" basedir="." default="usage">
+    <taskdef resource="net/sf/antcontrib/antcontrib.properties"/>
 
-    <filter token="version.folder" value="${version.folder}"/>
+    <propertyregex property="portal.src.dir.fixed"
+                   input="${portal.src.dir}"
+                   regexp="\\"
+                   replace="\/"
+                   defaultValue="${portal.src.dir}"
+                   global="true" />
 
-    <target name="clean">
-        <delete dir="${basedir}/${version.folder}"/>
-    </target>
+    <propertyregex property="basedir.fixed"
+                   input="${basedir}"
+                   regexp="\\"
+                   replace="\/"
+                   defaultValue="${basedir}"
+                   global="true" />
 
     <target name="copy-files">
-        <mkdir dir="${basedir}/${version.folder}"/>
-        
-        <copy todir="${basedir}/${version.folder}" verbose="true" overwrite="true" filtering="true">
-            <fileset dir="${basedir}/templates">
+        <fail message="Please specify lr.version">
+            <condition>
+                <not>
+                    <isset property="lr.version"/>
+                </not>
+            </condition>
+        </fail>
+
+        <fail message="Please specify portal.src.dir">
+            <condition>
+                <not>
+                    <isset property="portal.src.dir"/>
+                </not>
+            </condition>
+        </fail>
+
+        <fail message="Please specify dest.dir">
+            <condition>
+                <not>
+                    <isset property="dest.dir"/>
+                </not>
+            </condition>
+        </fail>
+
+        <mkdir dir="${basedir}/${dest.dir}"/>
+
+        <filter token="portal.src.dir" value="${portal.src.dir.fixed}"/>
+
+        <copy todir="${basedir}/${dest.dir}" verbose="true" overwrite="true" filtering="true">
+            <fileset dir="${basedir}/templates/${lr.version}">
                 <include name="*"/>
             </fileset>
         </copy>
+    </target>
+
+    <target name="list">
+        <dirset id="template.contents" dir="templates" includes="*"/>
+        <property name="prop.template.contents" refid="template.contents"/>
+        <echo>
+Liferay versions:
+
+${prop.template.contents}
+        </echo>
+    </target>
+
+    <target name="help">
+        <antcall target="usage"/>
+    </target>
+
+    <target name="info">
+        <antcall target="usage"/>
+    </target>
+
+    <target name="usage">
+        <echo>
+This script creates Intellij project files for a specific major version of Liferay.
+
+Arguments:
+    lr.version
+        The major version of Liferay
+        Use 'ant list' to list all the versions the script supports.
+
+    portal.src.dir
+        The root directory of the portal source code
+
+    dest.dir
+        The script will place the Intellij project files in ${basedir.fixed}/${dest.dir}.
+        If the directory doesn't exist, it will be created.
+
+Usage:
+    ant -Dlr.version=5.2 -Dportal.src.dir=D:\\liferay\\portal\\5.2.8_EE\\src -Ddest.dir=some_client_proj copy-files
+
+    ant -Dlr.version=5.2 -Dportal.src.dir=D:/liferay/portal/5.2.8_EE/src -Ddest.dir=some_client_proj copy-files
+
+    ant -Dlr.version=5.2 -Dportal.src.dir=/usr/local/liferay/portal/5.2.8_EE/src -Ddest.dir=some_client_proj copy-files
+        </echo>
     </target>
 </project>
