@@ -190,13 +190,13 @@
   </component>
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/portal-impl.iml" filepath="$PROJECT_DIR$/portal-impl.iml" />
-      <module fileurl="file://$PROJECT_DIR$/portal-service.iml" filepath="$PROJECT_DIR$/portal-service.iml" />
-      <module fileurl="file://$PROJECT_DIR$/portal-web.iml" filepath="$PROJECT_DIR$/portal-web.iml" />
-      <module fileurl="file://$PROJECT_DIR$/portal_source.iml" filepath="$PROJECT_DIR$/portal_source.iml" />
-      <module fileurl="file://$PROJECT_DIR$/util-bridges.iml" filepath="$PROJECT_DIR$/util-bridges.iml" />
-      <module fileurl="file://$PROJECT_DIR$/util-java.iml" filepath="$PROJECT_DIR$/util-java.iml" />
-      <module fileurl="file://$PROJECT_DIR$/util-taglib.iml" filepath="$PROJECT_DIR$/util-taglib.iml" />
+      <module fileurl="file://$PROJECT_DIR$/portal-impl.iml" filepath="$PROJECT_DIR$/portal-impl.iml" group="LR" />
+      <module fileurl="file://$PROJECT_DIR$/portal-service.iml" filepath="$PROJECT_DIR$/portal-service.iml" group="LR" />
+      <module fileurl="file://$PROJECT_DIR$/portal-web.iml" filepath="$PROJECT_DIR$/portal-web.iml" group="LR" />
+      <module fileurl="file://$PROJECT_DIR$/portal_source.iml" filepath="$PROJECT_DIR$/portal_source.iml" group="LR" />
+      <module fileurl="file://$PROJECT_DIR$/util-bridges.iml" filepath="$PROJECT_DIR$/util-bridges.iml" group="LR" />
+      <module fileurl="file://$PROJECT_DIR$/util-java.iml" filepath="$PROJECT_DIR$/util-java.iml" group="LR" />
+      <module fileurl="file://$PROJECT_DIR$/util-taglib.iml" filepath="$PROJECT_DIR$/util-taglib.iml" group="LR" />
     </modules>
   </component>
   <component name="ProjectResources">
@@ -212,30 +212,30 @@
   <component name="libraryTable">
     <library name="Global">
       <CLASSES>
-        <root url="file://$PROJECT_DIR$/../../@version.folder@/src/lib/development" />
-        <root url="file://$PROJECT_DIR$/../../@version.folder@/src/lib/global" />
+        <root url="file://@portal.src.dir@/lib/development" />
+        <root url="file://@portal.src.dir@/lib/global" />
       </CLASSES>
       <JAVADOC />
       <SOURCES>
-        <root url="file://$PROJECT_DIR$/../../@version.folder@/src/lib/development" />
+        <root url="file://@portal.src.dir@/lib/development" />
       </SOURCES>
-      <jarDirectory url="file://$PROJECT_DIR$/../../@version.folder@/src/lib/development" recursive="false" />
-      <jarDirectory url="file://$PROJECT_DIR$/../../@version.folder@/src/lib/development" recursive="false" />
-      <jarDirectory url="file://$PROJECT_DIR$/../../@version.folder@/src/lib/global" recursive="false" />
-      <jarDirectory url="file://$PROJECT_DIR$/../../@version.folder@/src/lib/global" recursive="false" />
-      <jarDirectory url="file://$PROJECT_DIR$/../../@version.folder@/src/lib/development" recursive="false" type="SOURCES" />
+      <jarDirectory url="file://@portal.src.dir@/lib/development" recursive="false" />
+      <jarDirectory url="file://@portal.src.dir@/lib/development" recursive="false" />
+      <jarDirectory url="file://@portal.src.dir@/lib/global" recursive="false" />
+      <jarDirectory url="file://@portal.src.dir@/lib/global" recursive="false" />
+      <jarDirectory url="file://@portal.src.dir@/lib/development" recursive="false" type="SOURCES" />
     </library>
     <library name="Portal">
       <CLASSES>
-        <root url="file://$PROJECT_DIR$/../../@version.folder@/src/lib/portal" />
+        <root url="file://@portal.src.dir@/lib/portal" />
       </CLASSES>
       <JAVADOC />
       <SOURCES>
-        <root url="file://$PROJECT_DIR$/../../@version.folder@/src/lib/portal" />
+        <root url="file://@portal.src.dir@/lib/portal" />
       </SOURCES>
-      <jarDirectory url="file://$PROJECT_DIR$/../../@version.folder@/src/lib/portal" recursive="false" />
-      <jarDirectory url="file://$PROJECT_DIR$/../../@version.folder@/src/lib/portal" recursive="false" />
-      <jarDirectory url="file://$PROJECT_DIR$/../../@version.folder@/src/lib/portal" recursive="false" type="SOURCES" />
+      <jarDirectory url="file://@portal.src.dir@/lib/portal" recursive="false" />
+      <jarDirectory url="file://@portal.src.dir@/lib/portal" recursive="false" />
+      <jarDirectory url="file://@portal.src.dir@/lib/portal" recursive="false" type="SOURCES" />
     </library>
   </component>
 </project>

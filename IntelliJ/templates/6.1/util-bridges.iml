@@ -2,8 +2,8 @@
 <module type="JAVA_MODULE" version="4">
   <component name="NewModuleRootManager" inherit-compiler-output="true">
     <exclude-output />
-    <content url="file://$MODULE_DIR$/../../@version.folder@/src/util-bridges">
-      <sourceFolder url="file://$MODULE_DIR$/../../@version.folder@/src/util-bridges/src" isTestSource="false" />
+    <content url="file://@portal.src.dir@/util-bridges">
+      <sourceFolder url="file://@portal.src.dir@/util-bridges/src" isTestSource="false" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
